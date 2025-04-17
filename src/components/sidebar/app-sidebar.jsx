@@ -2,15 +2,9 @@
 
 import * as React from "react";
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
+  Camera,
+  GitCompare,
+  ListTodo,
   SquareTerminal,
 } from "lucide-react";
 
@@ -25,133 +19,75 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { Progress } from "../ui/progress";
+import { Apple, Bolt, Logo, Momondo, Ryanair, Uber } from "@/icons";
 
-// This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Olivia Janson",
+    credits: "10 VPN credits left",
+    progressbar: Progress,
     avatar: "https://github.com/shadcn.png",
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      name: "SERP Lens",
+      logo: Logo,
     },
     {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
+      name: "Bolt",
+      logo: Bolt,
     },
+  ],
+  teamnames: [
     {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Bingo Card Creator",
+      logo: Uber,
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Projects",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
     },
     {
-      title: "Models",
+      title: "Screenshots",
       url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
+      icon: Camera,
     },
     {
-      title: "Documentation",
+      title: "SERP compare",
       url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
+      icon: GitCompare,
     },
     {
-      title: "Settings",
+      title: "Tasks (Beta)",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: ListTodo,
     },
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "Bolt",
       url: "#",
-      icon: Frame,
+      icon: Bolt,
     },
     {
-      name: "Sales & Marketing",
+      name: "Apple",
       url: "#",
-      icon: PieChart,
+      icon: Apple,
     },
     {
-      name: "Travel",
+      name: "Ryanair",
       url: "#",
-      icon: Map,
+      icon: Ryanair,
+    },
+    {
+      name: "Momondo",
+      url: "#",
+      icon: Momondo,
     },
   ],
 };
@@ -160,7 +96,7 @@ export function AppSidebar({ ...props }) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <NavUser user={data.user} />
+        <NavUser user={data.user} teams={data.teams} teamnames={data.teamnames} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
