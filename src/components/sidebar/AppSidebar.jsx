@@ -1,23 +1,16 @@
 "use client";
 
 import * as React from "react";
-import {
-  Camera,
-  GitCompare,
-  ListTodo,
-  SquareTerminal,
-} from "lucide-react";
+import { Camera, GitCompare, ListTodo, SquareTerminal } from "lucide-react";
 
-import { NavMain } from "@/components/sidebar/nav-main";
-import { NavProjects } from "@/components/sidebar/nav-projects";
-import { NavUser } from "@/components/sidebar/nav-user";
-import { TeamSwitcher } from "@/components/sidebar/team-switcher";
+import { NavUser, NavMain, NavProjects, TeamSwitcher } from "@/components";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { Progress } from "../ui/progress";
 import { Apple, Bolt, Logo, Momondo, Ryanair, Uber } from "@/icons";
@@ -29,7 +22,7 @@ const data = {
     progressbar: Progress,
     avatar: "https://github.com/shadcn.png",
   },
-  teams: [
+  logos: [
     {
       name: "SERP Lens",
       logo: Logo,
@@ -39,7 +32,7 @@ const data = {
       logo: Bolt,
     },
   ],
-  teamnames: [
+  logo: [
     {
       name: "Bingo Card Creator",
       logo: Uber,
@@ -96,14 +89,18 @@ export function AppSidebar({ ...props }) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <NavUser user={data.user} teams={data.teams} teamnames={data.teamnames} />
+        <NavUser
+          user={data.user}
+          logos={data.logos}
+          logo={data.logo}
+        />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

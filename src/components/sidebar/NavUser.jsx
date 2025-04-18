@@ -32,7 +32,7 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { useTheme } from "next-themes";
 
-export function NavUser({ user, teams, teamnames }) {
+export function NavUser({ user, logos, logo }) {
   const { isMobile } = useSidebar();
   const { setTheme } = useTheme();
 
@@ -56,7 +56,7 @@ export function NavUser({ user, teams, teamnames }) {
             className="w-(--radix-dropdown-menu-trigger-width) min-w-72 rounded-lg"
             side={isMobile ? "bottom" : "right"}
             align="end"
-            sideOffset={4}
+            sideoffset={4}
           >
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
@@ -120,12 +120,12 @@ export function NavUser({ user, teams, teamnames }) {
               className="w-(--radix-dropdown-menu-trigger-width) min-w-[280px] rounded-lg"
               align="start"
               side={isMobile ? "bottom" : "right"}
-              sideOffset={4}
+              sideoffset={4}
             >
               <DropdownMenuLabel className="text-zinc-500 text-xs">
                 me@samunderwood.co.uk
               </DropdownMenuLabel>
-              {teams.map((team, index) => (
+              {logos.map((team, index) => (
                 <DropdownMenuItem key={team.name} className="gap-2 p-2">
                   <div className="flex items-center justify-center rounded-xs">
                     <team.logo className="size-5 shrink-0 rounded-xs" />
@@ -144,12 +144,12 @@ export function NavUser({ user, teams, teamnames }) {
               className="w-(--radix-dropdown-menu-trigger-width) min-w-[280px] rounded-lg"
               align="start"
               side={isMobile ? "bottom" : "right"}
-              sideOffset={4}
+              sideoffset={4}
             >
               <DropdownMenuLabel className="text-zinc-500 text-xs">
                 sam@bingocardcreator.com
               </DropdownMenuLabel>
-              {teamnames.map((teamname, index) => (
+              {logo.map((teamname, index) => (
                 <DropdownMenuItem key={teamname.name} className="gap-2 p-2">
                   <div className="flex items-center justify-center rounded-xs">
                     <teamname.logo className="size-5 shrink-0 rounded-xs" />

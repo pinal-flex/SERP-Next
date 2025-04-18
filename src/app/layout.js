@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui";
-import { AppSidebar } from "@/components/sidebar/app-sidebar";
+import { AppSidebar } from "@/components/sidebar/AppSidebar";
+import { TopBar } from "@/components/TopBar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
@@ -25,11 +26,13 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider>
+          <SidebarProvider className="px-2">
             <AppSidebar />
             <main>
-              <SidebarTrigger />
-
+              <div className="flex items-center">
+                <SidebarTrigger className="gap-0 p-2 text-zinc-500"/>
+                <TopBar />
+              </div>
               {children}
             </main>
           </SidebarProvider>
