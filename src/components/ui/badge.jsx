@@ -17,13 +17,16 @@ const badgeVariants = cva(
           "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+        warning: "text-yellow-700 bg-yellow-100",
+        success: "text-green-600 bg-green-50",
+        danger: "bg-red-50 text-red-500",
       },
     },
     defaultVariants: {
       variant: "default",
     },
   }
-)
+);
 
 function Badge({
   className,

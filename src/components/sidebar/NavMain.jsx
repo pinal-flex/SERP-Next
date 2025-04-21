@@ -1,16 +1,6 @@
 "use client"
 
-import {
-  Collapsible,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
-import {
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
+import { Collapsible, CollapsibleTrigger, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "..";
 
 export function NavMain({
   items

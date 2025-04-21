@@ -4,3 +4,9 @@ export { Uber } from './Uber';
 export { Apple } from './Apple';
 export { Ryanair } from './Ryanair';
 export { Momondo } from './Momondo';
+export { Brodie } from './Brodie';
+export { TheNorthFace } from './TheNorthFace';
+export { UKFlag } from "./UKFlag";
+export { USFlag } from './USFlag';
+export { Austrelia } from './Austrelia'
+export { NewZealand } from './NewZealand'

@@ -1,8 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { Logo } from "@/icons";
-import { Progress } from "@/components/ui/progress";
 import {
   ChevronsUpDown,
   ExternalLink,
@@ -11,26 +9,9 @@ import {
   Sun,
   User,
 } from "lucide-react";
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
-} from "@/components/ui/sidebar";
-import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
+import { Avatar, AvatarFallback, AvatarImage, DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger, Progress, SidebarMenu, SidebarMenuButton, SidebarMenuItem, ToggleGroup, ToggleGroupItem, useSidebar } from "..";
 import { useTheme } from "next-themes";
+import { Logo } from "@/icons";
 
 export function NavUser({ user, logos, logo }) {
   const { isMobile } = useSidebar();

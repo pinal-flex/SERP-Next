@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui";
-import { AppSidebar } from "@/components/sidebar/AppSidebar";
-import { TopBar } from "@/components/TopBar";
-import { ThemeProvider } from "@/components/theme-provider";
+import { AppSidebar, SidebarProvider, SidebarTrigger, ThemeProvider } from "@/components";
+import { TopBar } from "@/components";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,7 +28,7 @@ export default function RootLayout({ children }) {
             <AppSidebar />
             <main>
               <div className="flex items-center">
-                <SidebarTrigger className="gap-0 p-2 text-zinc-500"/>
+                <SidebarTrigger className="gap-0 p-2 text-zinc-500" />
                 <TopBar />
               </div>
               {children}

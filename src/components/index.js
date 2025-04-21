@@ -1,3 +1,4 @@
 export * from "./sidebar";
 export * from "./ui";
-// export { ThemeProvider } from "./ThemeProvider";
+export * from "./header"
+export { ThemeProvider } from "./ThemeProvider";

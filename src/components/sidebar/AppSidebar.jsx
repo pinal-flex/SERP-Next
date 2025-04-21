@@ -2,18 +2,8 @@
 
 import * as React from "react";
 import { Camera, GitCompare, ListTodo, SquareTerminal } from "lucide-react";
-
-import { NavUser, NavMain, NavProjects, TeamSwitcher } from "@/components";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarRail,
-  useSidebar,
-} from "@/components/ui/sidebar";
-import { Progress } from "../ui/progress";
 import { Apple, Bolt, Logo, Momondo, Ryanair, Uber } from "@/icons";
+import { NavMain, NavProjects, NavUser, Progress, Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, TeamSwitcher } from "..";
 
 const data = {
   user: {

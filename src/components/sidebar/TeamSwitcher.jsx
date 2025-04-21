@@ -1,33 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Send, UserPlus, X } from "lucide-react";
-
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "../ui";
-import { Label } from "../ui/label";
-import { Textarea } from "../ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Collapsible, CollapsibleTrigger } from "../ui/collapsible";
+import { Send, UserPlus } from "lucide-react";
+import { Button, Collapsible, CollapsibleTrigger, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SidebarMenu, SidebarMenuButton, SidebarMenuItem, Textarea } from "..";
 
 export function TeamSwitcher() {
   return (
@@ -39,7 +14,7 @@ export function TeamSwitcher() {
               <DialogTrigger asChild>
                 <SidebarMenuButton
                   tooltip="Invite members"
-                  className="justify-center gap-0"
+                  className="justify-center gap-0 bg-white"
                 >
                   <UserPlus size={16} />
                   <span className="pl-1">
@@ -86,7 +61,6 @@ export function TeamSwitcher() {
                 </div>
 
                 <DialogFooter>
-                  56
                   <Button className="gap-2">
                     <Send className="w-4 h-4" />
                     Send invites
