@@ -10,3 +10,4 @@ export { UKFlag } from "./UKFlag";
 export { USFlag } from './USFlag';
 export { Austrelia } from './Austrelia'
 export { NewZealand } from './NewZealand'
+export { Hertz } from './Hertz'

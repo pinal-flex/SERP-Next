@@ -153,3 +153,4 @@ export {
   CardDescription,
   CardContent,
 } from './card';
+export { Switch } from './switch'

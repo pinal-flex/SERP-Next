@@ -1,10 +1,20 @@
+"use client";
 import { MapPin, Star } from "lucide-react";
-import * as React from "react";
-import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "..";
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "..";
 import { Austrelia, NewZealand, UKFlag, USFlag } from "@/icons";
+import { useState } from "react";
 
 export function LocationSelector() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>

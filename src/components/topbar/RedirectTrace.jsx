@@ -18,8 +18,8 @@ export function RedirectTrace() {
               final destination.
             </SheetDescription>
           </SheetHeader>
-          <div className="grid gap-4">
-            <Accordion type="single" collapsible className="w-full px-4">
+          <div className="grid gap-4 px-4">
+            <Accordion type="single" collapsible className="max-w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <div className="flex gap-1.5">

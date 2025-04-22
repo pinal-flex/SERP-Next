@@ -1,4 +1,4 @@
 export * from "./sidebar";
 export * from "./ui";
-export * from "./header"
+export * from "./topbar"
 export { ThemeProvider } from "./ThemeProvider";

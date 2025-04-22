@@ -5,6 +5,7 @@ import { cn } from "../../lib/utils";
 export const textVariants = cva("", {
   variants: {
     variant: {
+      xs: "text-xs",
       sm: "text-xs sm:text-sm",
       base: "text-sm sm:text-base",
       lg: "text-sm sm:text-lg",

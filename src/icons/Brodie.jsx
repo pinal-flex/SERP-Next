@@ -1,4 +1,4 @@
-export function Brodie() {
+export function Brodie({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +7,7 @@ export function Brodie() {
       height="58"
       viewBox="0 0 59 58"
       fill="none"
+      className={ className }
     >
       <g filter="url(#filter0_dd_12211_20719)">
         <g clipPath="url(#clip0_12211_20719)">
@@ -33,7 +34,7 @@ export function Brodie() {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

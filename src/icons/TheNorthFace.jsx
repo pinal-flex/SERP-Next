@@ -1,4 +1,4 @@
-export function TheNorthFace() {
+export function TheNorthFace({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +7,7 @@ export function TheNorthFace() {
       height="48"
       viewBox="0 0 49 48"
       fill="none"
+      className={ className }
     >
       <rect x="0.5" width="48" height="48" fill="url(#pattern0_12211_23638)" />
       <rect x="0.5" width="48" height="48" fill="url(#pattern1_12211_23638)" />

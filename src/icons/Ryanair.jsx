@@ -1,4 +1,4 @@
-export function Ryanair() {
+export function Ryanair({ className }) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +7,7 @@ export function Ryanair() {
         height="16"
         viewBox="0 0 16 16"
         fill="none"
+        className={ className }
       >
         <rect width="16" height="16" fill="url(#pattern0_12110_34157)" />
         <defs>

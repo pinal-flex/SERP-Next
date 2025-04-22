@@ -12,22 +12,42 @@ import {
 } from "..";
 
 const hreflangs = [
-  { lang: "DE", url: "https://www.example.com/de/help/contact/" },
-  { lang: "PO", url: "https://www.example.com/po/help/contact/" },
-  { lang: "DE", url: "https://www.example.com/de/help/contact/" },
-  { lang: "PO", url: "https://www.example.com/po/help/contact/" },
+  {
+    lang: "DE",
+    url: `https://
+    www.example.com/
+    de/help/contact/`,
+  },
+  {
+    lang: "PO",
+    url: `https://
+    www.example.com/
+    po/help/contact/`,
+  },
+  {
+    lang: "DE",
+    url: `https://
+    www.example.com/
+    de/help/contact/`,
+  },
+  {
+    lang: "PO",
+    url: `https://
+    www.example.com/
+    po/help/contact/`,
+  },
 ];
 const responseHeaders = [
-  { key: "Content-Len...", value: "0" },
-  { key: "Content-Type", value: "text/html..." },
-  { key: "Date", value: "Mon, 22 Nov 2024 1..." },
-  { key: "Location", value: "https://example.com..." },
+  { key: "Content-Length", value: "0" },
+  { key: "Content-Type", value: "text/html" },
+  { key: "Date", value: "Mon, 22 Nov 2024 18:46:59 GMT" },
+  { key: "Location", value: "https://example.com" },
   { key: "Server", value: "Apache" },
 ];
 
 export function AccordionSummary() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       <div className="space-y-4">
         <h3 className="text-base font-semibold text-zinc-700">Summary</h3>
         <div className="flex flex-col gap-y-4">
@@ -92,17 +112,22 @@ export function AccordionSummary() {
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
-              <p className="text-zinc-500 break-words">{url}</p>
+              <p className="text-zinc-500 break-words whitespace-pre-line">
+                {url}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
       <div className="shadow-sm border border-zinc-200 rounded-lg p-5">
-        <Table>
+        <Table className="w-full">
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px] text-base font-semibold text-zinc-700">
+              <TableHead
+                colSpan={2}
+                className="text-base font-semibold text-zinc-700 p-2"
+              >
                 Response headers
               </TableHead>
             </TableRow>
@@ -110,10 +135,10 @@ export function AccordionSummary() {
           <TableBody className="[&_tr:last-child]:border-b">
             {responseHeaders.map((responseHeader) => (
               <TableRow key={responseHeader.key}>
-                <TableCell className="font-medium text-sm text-zinc-900">
+                <TableCell className="max-w-[113px] truncate p-2 text-sm font-medium text-zinc-900">
                   {responseHeader.key}
                 </TableCell>
-                <TableCell className="text-left font-normal text-sm text-zinc-900">
+                <TableCell className="text-left max-w-[183px] truncate p-2 text-sm font-normal text-zinc-900">
                   {responseHeader.value}
                 </TableCell>
               </TableRow>
@@ -123,7 +148,7 @@ export function AccordionSummary() {
       </div>
 
       <div>
-        <button className="border border-zinc-200 flex gap-2 py-2.5 px-4 rounded-md text-zinc-900">
+        <button className="border border-zinc-200 flex gap-1.5 py-2 px-4 rounded-md text-zinc-900">
           Open URL
           <ExternalLink className="w-4 h-4" />
         </button>
