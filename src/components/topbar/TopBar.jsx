@@ -12,7 +12,7 @@ import {
 
 export function TopBar() {
   return (
-    <div className="flex justify-between w-full p-2">
+    <div className="flex justify-between w-full p-2 sticky top-0">
       <NavigationControls />
       <SearchDialog />
       <div className="flex">

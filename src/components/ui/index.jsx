@@ -154,3 +154,4 @@ export {
   CardContent,
 } from './card';
 export { Switch } from './switch'
+export { Checkbox } from './checkbox'

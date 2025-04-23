@@ -3,7 +3,18 @@
 import * as React from "react";
 import { Camera, GitCompare, ListTodo, SquareTerminal } from "lucide-react";
 import { Apple, Bolt, Logo, Momondo, Ryanair, Uber } from "@/icons";
-import { NavMain, NavProjects, NavUser, Progress, Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, TeamSwitcher } from "..";
+import {
+  NavMain,
+  NavProjects,
+  NavUser,
+  Progress,
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+  TeamSwitcher,
+} from "..";
 
 const data = {
   user: {
@@ -31,7 +42,7 @@ const data = {
   navMain: [
     {
       title: "Projects",
-      url: "#",
+      url: "/projects",
       icon: SquareTerminal,
       isActive: true,
     },
@@ -79,11 +90,7 @@ export function AppSidebar({ ...props }) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <NavUser
-          user={data.user}
-          logos={data.logos}
-          logo={data.logo}
-        />
+        <NavUser user={data.user} logos={data.logos} logo={data.logo} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />

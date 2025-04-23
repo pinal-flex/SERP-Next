@@ -3,110 +3,48 @@ export function Brodie({ className }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="59"
-      height="58"
-      viewBox="0 0 59 58"
+      width="49"
+      height="48"
+      viewBox="0 0 49 48"
       fill="none"
       className={ className }
     >
-      <g filter="url(#filter0_dd_12211_20719)">
-        <g clipPath="url(#clip0_12211_20719)">
-          <path
-            d="M5.16602 7C5.16602 3.68629 7.85231 1 11.166 1H47.166C50.4797 1 53.166 3.68629 53.166 7V43C53.166 46.3137 50.4797 49 47.166 49H11.166C7.85231 49 5.16602 46.3137 5.16602 43V7Z"
-            fill="white"
-          />
-          <rect
-            x="5.16602"
-            y="1"
-            width="48"
-            height="48"
-            fill="url(#pattern0_12211_20719)"
-          />
-        </g>
+      <g clipPath="url(#clip0_12371_30688)">
+        <rect
+          width="48"
+          height="48"
+          transform="translate(0.166016)"
+          fill="white"
+        />
+        <rect
+          x="0.166016"
+          width="48"
+          height="48"
+          fill="url(#pattern0_12371_30688)"
+        />
       </g>
       <defs>
-        <filter
-          id="filter0_dd_12211_20719"
-          x="0.166016"
-          y="0"
-          width="58"
-          height="58"
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha"
-          />
-          <feMorphology
-            radius="1"
-            operator="erode"
-            in="SourceAlpha"
-            result="effect1_dropShadow_12211_20719"
-          />
-          <feOffset dy="2" />
-          <feGaussianBlur stdDeviation="2" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_12211_20719"
-          />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha"
-          />
-          <feMorphology
-            radius="1"
-            operator="erode"
-            in="SourceAlpha"
-            result="effect2_dropShadow_12211_20719"
-          />
-          <feOffset dy="4" />
-          <feGaussianBlur stdDeviation="3" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="effect1_dropShadow_12211_20719"
-            result="effect2_dropShadow_12211_20719"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect2_dropShadow_12211_20719"
-            result="shape"
-          />
-        </filter>
         <pattern
-          id="pattern0_12211_20719"
+          id="pattern0_12371_30688"
           patternContentUnits="objectBoundingBox"
           width="1"
           height="1"
         >
           <use
-            xlinkHref="#image0_12211_20719"
+            xlinkHref="#image0_12371_30688"
             transform="translate(0 0.00808056) scale(0.00195312)"
           />
         </pattern>
-        <clipPath id="clip0_12211_20719">
-          <path
-            d="M5.16602 7C5.16602 3.68629 7.85231 1 11.166 1H47.166C50.4797 1 53.166 3.68629 53.166 7V43C53.166 46.3137 50.4797 49 47.166 49H11.166C7.85231 49 5.16602 46.3137 5.16602 43V7Z"
+        <clipPath id="clip0_12371_30688">
+          <rect
+            width="48"
+            height="48"
             fill="white"
+            transform="translate(0.166016)"
           />
         </clipPath>
         <image
-          id="image0_12211_20719"
+          id="image0_12371_30688"
           width="512"
           height="512"
           preserveAspectRatio="none"

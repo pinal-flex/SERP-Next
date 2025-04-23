@@ -4,8 +4,9 @@ import {
   AppSidebar,
   SidebarProvider,
   ThemeProvider,
+  BrowserTabs,
+  TopBar,
 } from "@/components";
-import { TopBar } from "@/components";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,12 +30,11 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <main className="overflow-hidden">
-            <SidebarProvider className="px-2">
+            <SidebarProvider>
               <AppSidebar />
-              <div className="flex flex-col flex-1">
-              
+              <div className="flex flex-col flex-1 h-dvh">
                 <TopBar />
-
+                <BrowserTabs />
                 {children}
               </div>
             </SidebarProvider>
