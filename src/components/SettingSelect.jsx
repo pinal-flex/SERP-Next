@@ -1,4 +1,4 @@
-import { Label, Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "..";
+import { Label, Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from ".";
 
 export function SettingSelect({
   id,

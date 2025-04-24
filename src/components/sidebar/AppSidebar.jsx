@@ -48,7 +48,7 @@ const data = {
     },
     {
       title: "Screenshots",
-      url: "#",
+      url: "/screenshots",
       icon: Camera,
     },
     {
@@ -65,7 +65,7 @@ const data = {
   projects: [
     {
       name: "Bolt",
-      url: "#",
+      url: "/projectdetail",
       icon: Bolt,
     },
     {

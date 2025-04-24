@@ -5,6 +5,5 @@ export { CaptureOptions } from './CaptureOptions';
 export { LocationSelector } from './LocationSelector';
 export { RedirectTrace } from './RedirectTrace';
 export { Setting } from './Setting';
-export { SettingSelect } from './SettingSelect'
 export { ContactUs } from './ContactUs'
 export { SearchDialog } from './SearchDialog'

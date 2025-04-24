@@ -7,7 +7,7 @@ export function ContactUs() {
       <DropdownMenuTrigger className="p-1.5 hover:bg-muted rounded-md data-[state=open]:bg-muted">
         <CircleHelp className="text-zinc-500" size={20} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[240px]" align="end">
+      <DropdownMenuContent className="w-[170px]" align="end">
         <DropdownMenuItem>
           <Mail />
           Contact us

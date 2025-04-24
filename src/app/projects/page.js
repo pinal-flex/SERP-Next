@@ -7,129 +7,139 @@ import {
   CardHeader,
   CardTitle,
   Checkbox,
+  DeleteButton,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  ProjectDialog,
+  Separator,
   Text,
 } from "@/components";
 import { TheNorthFace } from "@/icons";
 import {
+  ArrowDownZA,
   ArrowUpAZ,
   Ellipsis,
   FileSearch,
+  Plus,
   Star,
+  Timer,
   TrendingUp,
 } from "lucide-react";
 
-export default function Page() {
-  const clients = [
-    {
-      logo: "https://logo.clearbit.com/thenorthface.com",
-      name: "The North Face",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/apple.com",
-      name: "Apple",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "21 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/momondo.com",
-      name: "Momondo",
-      visitDate: "07 Sept",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "142 keywords",
-      growth: "24GB",
-    },
-    {
-      logo: "https://logo.clearbit.com/ryanair.com",
-      name: "Ryanair",
-      visitDate: "01 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "1044 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/uber.com",
-      name: "Uber",
-      visitDate: "02 June",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-    {
-      logo: "https://logo.clearbit.com/bolt.eu",
-      name: "Bolt",
-      visitDate: "07 Oct",
-      description:
-        "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
-      keywords: "14 keywords",
-      growth: "+5%",
-    },
-  ];
+const clients = [
+  {
+    logo: TheNorthFace,
+    name: "The North Face",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Apple",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "21 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Momondo",
+    visitDate: "07 Sept",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "142 keywords",
+    growth: "24GB",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Ryanair",
+    visitDate: "01 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "1044 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Uber",
+    visitDate: "02 June",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+  {
+    logo: TheNorthFace,
+    name: "Bolt",
+    visitDate: "07 Oct",
+    description:
+      "Optimize BetterGifts Co. for enhanced search rankings and improved online visibility results.",
+    keywords: "14 keywords",
+    growth: "+5%",
+  },
+];
 
+export default function Page() {
   return (
     <div className="p-4 md:p-12 overflow-y-auto">
       <div className="mb-5 flex flex-row justify-between remove-scroll items-center">
@@ -139,17 +149,45 @@ export default function Page() {
           </Text>
         </div>
         <div className="flex items-center gap-0 md:gap-3.5">
-          <Button variant="ghost" className="text-red-500">
-            Delete
-          </Button>
-          <Button variant="ghost">
-            <ArrowUpAZ />
-            Sort
-          </Button>
-          <Button>Add Project</Button>
+          <DeleteButton />
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex gap-1 items-center p-1.5 hover:bg-muted rounded-md data-[state=open]:bg-muted">
+              <ArrowUpAZ size={16} />
+              Sort
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[187px]" align="end">
+              <DropdownMenuItem>
+                <ArrowUpAZ color="#09090b" size={16} />
+                Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <ArrowDownZA color="#09090b" size={16} />
+                Billing
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Timer color="#09090b" size={16} />
+                Team
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Star color="#09090b" size={16} />
+                Subscription
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <ProjectDialog
+            title="Create project"
+            description="Create a project to save screenshots and keywords to a group. Revisit them later to see changes."
+          >
+            <Button>
+              <Plus className="mr-1" />
+              Edit Profile
+            </Button>
+          </ProjectDialog>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Separator className="mb-9" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
         {clients.map((client, index) => (
           <Card
             key={index}
@@ -168,7 +206,7 @@ export default function Page() {
 
             <CardContent className="px-4 flex gap-2.5">
               <div>
-                <TheNorthFace className="size-10 rounded-md border border-zinc-200" />
+                <client.logo className="size-10 rounded-md border border-zinc-200" />
               </div>
               <div>
                 <CardTitle>
