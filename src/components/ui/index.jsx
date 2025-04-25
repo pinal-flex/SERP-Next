@@ -157,3 +157,11 @@ export { Switch } from './switch'
 export { Checkbox } from './checkbox'
 export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from './popover'
 export { Calendar } from './calendar'
+export {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+} from './chart'

@@ -18,7 +18,7 @@ export function NavMain({
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
                 <SidebarMenuButton tooltip={item.title}>
-                  <a href={item.url} className="flex gap-2">
+                  <a href={item.url} className="flex items-center gap-2">
                   {item.icon && <item.icon size={16}/>}
                   <span>{item.title}</span>
                   </a>

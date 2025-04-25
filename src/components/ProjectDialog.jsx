@@ -1,16 +1,29 @@
-import { Plus } from "lucide-react";
-import { Button, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, Input, Label, Separator, Text, Textarea } from ".";
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  Input,
+  Label,
+  Separator,
+  Text,
+  Textarea,
+} from ".";
 
-export function ProjectDialog({ children, title, description }) {
+export function ProjectDialog({
+  children,
+  title,
+  description,
+  footerText,
+  footerButton,
+}) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        {/* <Button>
-          <Plus />
-          Edit Profile
-        </Button> */}
-        {children}
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px] gap-0">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
@@ -20,7 +33,7 @@ export function ProjectDialog({ children, title, description }) {
         </DialogHeader>
         <div className="grid gap-4 py-6">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-right">
+            <Label htmlFor="project-name" className="text-right">
               Project name
             </Label>
             <Input
@@ -30,7 +43,7 @@ export function ProjectDialog({ children, title, description }) {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="username" className="text-right">
+            <Label htmlFor="project-domain" className="text-right">
               Project domain
             </Label>
             <Input
@@ -43,7 +56,7 @@ export function ProjectDialog({ children, title, description }) {
             </Text>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-right">
+            <Label htmlFor="project-goal" className="text-right">
               Project goal
             </Label>
             <Textarea
@@ -78,16 +91,16 @@ export function ProjectDialog({ children, title, description }) {
             Add
           </Button>
         </div>
-        <DialogFooter className="flex items-center">
-          <Text variant="sm" weight="normal" className="text-slate-600">
-            3 projects remaining
-          </Text>
-          <Button type="submit">
-            <Plus />
-            Create Project
-          </Button>
+        <DialogFooter className="flex items-center justify-between">
+          {footerText && (
+            <Text variant="sm" weight="normal" className="text-slate-600">
+              {footerText}
+            </Text>
+          )}
+          {footerButton}
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
 }
+

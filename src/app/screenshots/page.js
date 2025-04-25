@@ -24,6 +24,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  SearchInput,
   Separator,
   Text,
 } from "@/components";
@@ -156,18 +157,7 @@ export default function Page() {
           </Text>
         </div>
         <div className="flex items-center gap-0 md:gap-4">
-          <div className="relative">
-            <Search
-              color="#71717A"
-              size={16}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2"
-            />
-            <Input
-              id="search"
-              placeholder="Search screenshots"
-              className="pl-8"
-            ></Input>
-          </div>
+          <SearchInput />
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
               <Button

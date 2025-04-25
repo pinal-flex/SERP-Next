@@ -178,10 +178,17 @@ export default function Page() {
           <ProjectDialog
             title="Create project"
             description="Create a project to save screenshots and keywords to a group. Revisit them later to see changes."
+            footerText="3 projects remaining"
+            footerButton={
+              <Button>
+                <Plus className="mr-1" size={16} />
+                Create Project
+              </Button>
+            }
           >
             <Button>
               <Plus className="mr-1" />
-              Edit Profile
+              Create Project
             </Button>
           </ProjectDialog>
         </div>
