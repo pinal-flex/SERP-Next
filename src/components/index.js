@@ -10,3 +10,4 @@ export { DatePickerWithRange } from './DatePickerWithRange'
 export { SearchInput } from './SearchInput'
 export { KeyWordsTable } from './KeyWordsTable'
 export { ChartTabs } from './ChartTabs'
+export { ScreenshotsGrid } from "./ScreenshotsGrid";

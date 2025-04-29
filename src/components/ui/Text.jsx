@@ -2,7 +2,7 @@ import React from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
-export const textVariants = cva("", {
+export const textVariants = cva("text-zinc-900", {
   variants: {
     variant: {
       xs: "text-xs",

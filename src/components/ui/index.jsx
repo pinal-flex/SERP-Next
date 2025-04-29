@@ -165,3 +165,4 @@ export {
   ChartLegendContent,
   ChartStyle,
 } from './chart'
+export { RadioGroup, RadioGroupItem } from './radio-group'

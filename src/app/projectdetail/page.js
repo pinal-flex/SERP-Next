@@ -1,11 +1,5 @@
 import {
   Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
   DatePickerWithRange,
   ProjectDialog,
   Separator,
@@ -16,15 +10,16 @@ import {
   Text,
   ChartTabs,
   KeyWordsTable,
+  ScreenshotsGrid,
 } from "@/components";
 import { Bolt } from "@/icons";
 import { Camera, FilePenLine, FileSearch2, Save } from "lucide-react";
 
 export default function page() {
   return (
-    <div className="p-4 md:p-12 overflow-y-auto">
-      <Tabs defaultValue="keywords" className="w-full">
-        <div className="mb-5 flex flex-row remove-scroll items-center">
+    <div className="px-4 py-12 max-w-[1174px] mx-auto">
+      <Tabs defaultValue="keywords" className="w-full gap-0">
+        <div className="flex flex-row remove-scroll items-center">
           <div className="flex items-center">
             <div className="flex items-center gap-4 mr-6">
               <Bolt className="size-8 rounded-md" />
@@ -62,28 +57,19 @@ export default function page() {
             </ProjectDialog>
           </div>
         </div>
-        <Separator className="mb-6" />
+
         <div className="flex flex-col gap-6">
-          <TabsContent value="keywords" className="flex flex-col gap-9">
+          <TabsContent value="keywords" className="flex flex-col">
+            <Separator className="mb-6 mt-5" />
             <ChartTabs />
             <KeyWordsTable />
           </TabsContent>
           <TabsContent value="Screenshots">
-            <Card>
-              <CardHeader>
-                <CardTitle>Screenshots</CardTitle>
-                <CardDescription>
-                  Change your password here. After saving, you will be logged
-                  out.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <Text>paladiya</Text>
-              </CardContent>
-              <CardFooter>
-                <Button>Save password</Button>
-              </CardFooter>
-            </Card>
+            <ScreenshotsGrid
+              showHeading={false}
+              showProjectFilter={false}
+              className="px-4 py-9 max-w-[1174px] mx-auto"
+            />
           </TabsContent>
         </div>
       </Tabs>

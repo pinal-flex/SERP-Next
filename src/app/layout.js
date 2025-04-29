@@ -29,13 +29,13 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <main className="overflow-hidden">
+          <main className="h-dvh flex flex-col max-h-dvh overflow-hidden bg-zinc-50/95">
             <SidebarProvider>
               <AppSidebar />
-              <div className="flex flex-col flex-1 h-dvh">
+              <div className="flex flex-col flex-1 h-full overflow-hidden">
                 <TopBar />
                 <BrowserTabs />
-                {children}
+                <div className="overflow-y-auto flex-1 p-2">{children}</div>
               </div>
             </SidebarProvider>
           </main>

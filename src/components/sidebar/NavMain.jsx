@@ -20,7 +20,7 @@ export function NavMain({
                 <SidebarMenuButton tooltip={item.title}>
                   <a href={item.url} className="flex items-center gap-2">
                   {item.icon && <item.icon size={16}/>}
-                  <span>{item.title}</span>
+                  <span className="whitespace-nowrap">{item.title}</span>
                   </a>
                 </SidebarMenuButton>
               </CollapsibleTrigger>

@@ -141,14 +141,14 @@ const clients = [
 
 export default function Page() {
   return (
-    <div className="p-4 md:p-12 overflow-y-auto">
-      <div className="mb-5 flex flex-row justify-between remove-scroll items-center">
+    <div className="px-4 py-12 max-w-[1174px] mx-auto">
+      <div className="mb-5 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
         <div>
           <Text type="h1" variant="2xl" weight="bold">
             Projects
           </Text>
         </div>
-        <div className="flex items-center gap-0 md:gap-3.5">
+        <div className="flex gap-2 md:gap-3.5 items-center">
           <DeleteButton />
           <DropdownMenu>
             <DropdownMenuTrigger className="flex gap-1 items-center p-1.5 hover:bg-muted rounded-md data-[state=open]:bg-muted">
@@ -174,7 +174,6 @@ export default function Page() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-
           <ProjectDialog
             title="Create project"
             description="Create a project to save screenshots and keywords to a group. Revisit them later to see changes."
@@ -194,7 +193,7 @@ export default function Page() {
         </div>
       </div>
       <Separator className="mb-9" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {clients.map((client, index) => (
           <Card
             key={index}
@@ -211,17 +210,13 @@ export default function Page() {
               </div>
             </CardHeader>
 
-            <CardContent className="px-4 flex gap-2.5">
+            <CardContent className="px-4 flex gap-2.5 flex-wrap">
               <div>
                 <client.logo className="size-10 rounded-md border border-zinc-200" />
               </div>
               <div>
                 <CardTitle>
-                  <Text
-                    variant="lg"
-                    weight="semibold"
-                    className="text-zinc-900"
-                  >
+                  <Text variant="lg" weight="semibold">
                     {client.name}
                   </Text>
                 </CardTitle>

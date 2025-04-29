@@ -5,7 +5,7 @@ export function Setting() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="p-1.5 hover:bg-muted data-[state=open]:bg-muted rounded-md">
+        <button className="p-0 md:p-1.5 hover:bg-muted data-[state=open]:bg-muted rounded-md">
           <Settings size={20} className="text-zinc-500" />
         </button>
       </SheetTrigger>
