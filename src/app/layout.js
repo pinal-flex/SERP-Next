@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
               <div className="flex flex-col flex-1 h-full overflow-hidden">
                 <TopBar />
                 <BrowserTabs />
-                <div className="overflow-y-auto flex-1 p-2">{children}</div>
+                <div className="overflow-y-auto flex-1 p-3 sm:p-2">{children}</div>
               </div>
             </SidebarProvider>
           </main>

@@ -8,22 +8,28 @@ import {
   File,
   FileUp,
   Funnel,
+  History,
   ListFilter,
   MessageSquare,
   Plus,
   Search,
+  Tags,
   Video,
   WandSparkles,
 } from "lucide-react";
 import {
   Badge,
   Button,
-  Card,
-  CardContent,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   Checkbox,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
   DeleteButton,
   Dialog,
   DialogContent,
@@ -33,8 +39,13 @@ import {
   DialogTrigger,
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuPortal,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
   Input,
   Label,
@@ -60,9 +71,11 @@ import {
   TabsTrigger,
   Text,
   Textarea,
+  Toggle,
 } from "@/components";
 import { UKFlag, USFlag } from "@/icons";
 import { Line, LineChart } from "recharts";
+import { useState } from "react";
 
 const invoices = [
   {
@@ -118,17 +131,21 @@ const chartConfig = {
 };
 
 export function KeyWordsTable() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-between mt-9">
+      <div className="flex justify-between mt-9 flex-wrap lg:flex-nowrap gap-2">
         <Text variant="xl" weight="bold">
           Keywords
         </Text>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4 flex-wrap sm:flex-nowrap">
           <SearchInput className="mr-4" />
           <div className="flex items-center gap-2">
             <DropdownMenu>
-              <DropdownMenuTrigger asChild className="flex items-center gap-2">
+              <DropdownMenuTrigger
+                asChild
+                className="flex items-center gap-1 md:gap-2"
+              >
                 <Button variant="outline">
                   <ListFilter size={16} />
                   Filter
@@ -153,15 +170,20 @@ export function KeyWordsTable() {
                 </Button>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button variant="outline">
+            <Button variant="outline" className="gap-1 md:gap-2">
               <File size={16} />
               Export
             </Button>
             <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="outline">
+              <DialogTrigger asChild className="gap-1 md:gap-2">
+                <Button
+                  variant="outline"
+                  className="gap-1 md:gap-2 truncate max-w-[90px] sm:max-w-none overflow-hidden text-ellipsis whitespace-nowrap px-2 sm:px-4"
+                >
                   <Plus size={16} />
-                  Add keywords
+                  <span className="truncate overflow-hidden text-ellipsis whitespace-nowrap">
+                    Add keywords
+                  </span>
                 </Button>
               </DialogTrigger>
               <DialogContent className="gap-0 p-5 w-[437px]">
@@ -191,11 +213,7 @@ export function KeyWordsTable() {
                         className="resize-none w-full h-full sm:h-[140px] placeholder:text-zinc-500"
                         placeholder="things to do london, what to do in nyc"
                       />
-                      <Text
-                        variant="sm"
-                        weight="normal"
-                        className="text-zinc-500"
-                      >
+                      <Text className="text-zinc-500">
                         Add keywords, either line or comma-separated.
                       </Text>
                       <Label htmlFor="Location" className="text-right">
@@ -240,27 +258,19 @@ export function KeyWordsTable() {
                       <RadioGroup defaultValue="hourly" className="gap-2 mb-5">
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="hourly" id="r1" />
-                          <Text variant="sm" weight="normal">
-                            Hourly (740 credits)
-                          </Text>
+                          <Text>Hourly (740 credits)</Text>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="daily" id="r2" />
-                          <Text variant="sm" weight="normal">
-                            Daily (31 credits)
-                          </Text>
+                          <Text>Daily (31 credits)</Text>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="weekly" id="r3" />
-                          <Text variant="sm" weight="normal">
-                            Weekly (4 credits)
-                          </Text>
+                          <Text>Weekly (4 credits)</Text>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="monthly" id="r4" />
-                          <Text variant="sm" weight="normal">
-                            Monthly (1 credit)
-                          </Text>
+                          <Text>Monthly (1 credit)</Text>
                         </div>
                       </RadioGroup>
 
@@ -270,21 +280,15 @@ export function KeyWordsTable() {
                       <RadioGroup defaultValue="desktop" className="gap-2">
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="desktop" id="r1" />
-                          <Text variant="sm" weight="normal">
-                            Desktop
-                          </Text>
+                          <Text>Desktop</Text>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="mobile" id="r2" />
-                          <Text variant="sm" weight="normal">
-                            Mobile
-                          </Text>
+                          <Text>Mobile</Text>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="both" id="r3" />
-                          <Text variant="sm" weight="normal">
-                            Both (2x credits)
-                          </Text>
+                          <Text>Both (2x credits)</Text>
                         </div>
                       </RadioGroup>
                     </div>
@@ -300,11 +304,7 @@ export function KeyWordsTable() {
                         <Text variant="base" weight="medium">
                           Click to upload or drag and drop
                         </Text>
-                        <Text
-                          variant="xs"
-                          weight="normal"
-                          className="text-zinc-500"
-                        >
+                        <Text variant="xs" className="text-zinc-500">
                           CSV only
                         </Text>
                       </div>
@@ -323,96 +323,137 @@ export function KeyWordsTable() {
           </div>
         </div>
       </div>
-      <div>
-        <Table className="mb-4">
-          <TableHeader>
-            <TableRow>
-              <TableHead>
+
+      <Table className="mb-4 bg-white rounded-md">
+        <TableHeader>
+          <TableRow>
+            <TableHead>
+              <Checkbox className="my-1" />
+            </TableHead>
+            <TableHead className="text-zinc-500 my-1">Keyword</TableHead>
+            <TableHead className="text-zinc-500 my-1">Location</TableHead>
+            <TableHead className="text-zinc-500 my-1">Device</TableHead>
+            <TableHead className="text-zinc-500 my-1">Tags</TableHead>
+            <TableHead className="text-zinc-500 my-1">Trend</TableHead>
+            <TableHead className="flex items-center gap-2 text-zinc-500 my-1">
+              Last updated
+              <ArrowUpDown size={16} />
+            </TableHead>
+            <TableHead className="text-zinc-500 my-1">SERP features</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {invoices.map((item, index) => (
+            <TableRow key={index}>
+              <TableCell>
                 <Checkbox />
-              </TableHead>
-              <TableHead>Keyword</TableHead>
-              <TableHead>Location</TableHead>
-              <TableHead>Device</TableHead>
-              <TableHead>Tags</TableHead>
-              <TableHead>Trend</TableHead>
-              <TableHead className="flex items-center gap-2">
-                Last updated
-                <ArrowUpDown size={16} />
-              </TableHead>
-              <TableHead>SERP features</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {invoices.map((item, index) => (
-              <TableRow key={index}>
-                <TableCell>
-                  <Checkbox />
-                </TableCell>
-                <TableCell>{item.Keyword}</TableCell>
-                <TableCell>
-                  <div className="flex items-center gap-2 align-middle">
-                    {item.Country}
-                    {item.Location}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <Badge variant="secondary">{item.deviceLabel}</Badge>
-                </TableCell>
-                <TableCell>
-                  <Badge variant="secondary">{item.TagsLabel}</Badge>
-                </TableCell>
-                <TableCell>
-                  <ChartContainer
-                    config={chartConfig}
-                    className="w-[130px] h-[47px]"
+              </TableCell>
+              <TableCell className="h-[78px]">{item.Keyword}</TableCell>
+              <TableCell>
+                <div className="flex items-center gap-2 align-middle">
+                  {item.Country}
+                  {item.Location}
+                </div>
+              </TableCell>
+              <TableCell>
+                <Badge variant="secondary">{item.deviceLabel}</Badge>
+              </TableCell>
+              <TableCell>
+                <Badge variant="secondary">{item.TagsLabel}</Badge>
+              </TableCell>
+              <TableCell>
+                <ChartContainer
+                  config={chartConfig}
+                  className="w-[130px] h-[47px]"
+                >
+                  <LineChart
+                    accessibilityLayer
+                    data={chartData}
+                    margin={{
+                      left: 12,
+                      right: 12,
+                    }}
                   >
-                    <LineChart
-                      accessibilityLayer
-                      data={chartData}
-                      margin={{
-                        left: 12,
-                        right: 12,
-                      }}
-                    >
-                      <ChartTooltip
-                        cursor={false}
-                        content={<ChartTooltipContent hideLabel />}
-                      />
-                      <Line
-                        dataKey="desktop"
-                        type="natural"
-                        stroke="var(--color-desktop)"
-                        strokeWidth={2}
-                        dot={false}
-                      />
-                    </LineChart>
-                  </ChartContainer>
-                </TableCell>
-                <TableCell>{item.LastupdatedTime}</TableCell>
-                <TableCell>
-                  <div className="flex items-center gap-2">
+                    <ChartTooltip
+                      cursor={false}
+                      content={<ChartTooltipContent hideLabel />}
+                    />
+                    <Line
+                      dataKey="desktop"
+                      type="natural"
+                      stroke="var(--color-desktop)"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                  </LineChart>
+                </ChartContainer>
+              </TableCell>
+              <TableCell>{item.LastupdatedTime}</TableCell>
+              <TableCell>
+                <div className="flex items-center gap-2">
+                  <Toggle>
                     <WandSparkles size={16} className="text-zinc-500" />
+                  </Toggle>
+                  <Toggle>
                     <Video size={16} className="text-zinc-500" />
+                  </Toggle>
+                  <Toggle>
                     <MessageSquare size={16} className="text-zinc-500" />
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="flex items-center gap-2">
-                    <Activity size={16} className="text-zinc-900" />
-                    <Search size={16} className="text-zinc-900" />
-                    <Ellipsis size={16} className="text-zinc-900" />
-                  </div>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <div className="flex gap-2 justify-end">
-          <Button variant="outline" className="opacity-50">
-            Previous
-          </Button>
-          <Button variant="outline">Next</Button>
-        </div>
+                  </Toggle>
+                </div>
+              </TableCell>
+              <TableCell>
+                <div className="flex items-center gap-2">
+                  <Activity size={16} className="text-zinc-900" />
+                  <Search size={16} className="text-zinc-900" />
+
+                  <DropdownMenu align="end">
+                    <DropdownMenuTrigger asChild>
+                      <Ellipsis size={16} className="text-zinc-900" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-56">
+                      <DropdownMenuGroup>
+                        <DropdownMenuSub>
+                          <DropdownMenuSubTrigger
+                            className="gap-2"
+                            onClick={() => setOpen(true)}
+                          >
+                            <Search size={16} color="#09090b" /> Tags
+                          </DropdownMenuSubTrigger>
+                          <DropdownMenuPortal>
+                            <DropdownMenuSubContent>
+                              <DropdownMenuItem>Email</DropdownMenuItem>
+                              <DropdownMenuItem>Message</DropdownMenuItem>
+                              <DropdownMenuSeparator />
+                              <DropdownMenuItem>More...</DropdownMenuItem>
+                            </DropdownMenuSubContent>
+                          </DropdownMenuPortal>
+                        </DropdownMenuSub>
+                        <DropdownMenuItem>
+                          <Tags color="#09090b" />
+                          View SERP
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <History color="#09090b" />
+                          Position history
+                        </DropdownMenuItem>
+                      </DropdownMenuGroup>
+                      <DropdownMenuSeparator />
+
+                      <DeleteButton />
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <div className="flex gap-2 justify-end">
+        <Button variant="outline" className="opacity-50">
+          Previous
+        </Button>
+        <Button variant="outline">Next</Button>
       </div>
     </div>
   );

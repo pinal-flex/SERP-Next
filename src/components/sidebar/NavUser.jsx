@@ -9,7 +9,7 @@ import {
   Sun,
   User,
 } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage, DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger, Progress, SidebarMenu, SidebarMenuButton, SidebarMenuItem, ToggleGroup, ToggleGroupItem, useSidebar } from "..";
+import { Avatar, AvatarFallback, AvatarImage, DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger, Progress, SidebarMenu, SidebarMenuButton, SidebarMenuItem, Text, ToggleGroup, ToggleGroupItem, useSidebar } from "..";
 import { useTheme } from "next-themes";
 import { Logo } from "@/icons";
 
@@ -29,7 +29,7 @@ export function NavUser({ user, logos, logo }) {
               <Avatar className="h-8 w-8 rounded-lg items-center">
                 <Logo alt="Company Logo" className="rounded-md" />
               </Avatar>
-              <span className="text-sm font-semibold">SERP Lens</span>
+              <Text weight="semibold">SERP Lens</Text>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
@@ -40,16 +40,23 @@ export function NavUser({ user, logos, logo }) {
             sideoffset={4}
           >
             <DropdownMenuLabel className="p-0 font-normal">
-              <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+              <div className="flex items-center gap-2 px-1 py-1.5 text-left">
                 <Avatar className="h-10 w-10 rounded-full size-10">
                   <AvatarImage src={user.avatar} alt={user.name} />
                   <AvatarFallback className="rounded-lg">CN</AvatarFallback>
                 </Avatar>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium pb-1.5">
+                <div className="grid flex-1 text-left">
+                  <Text
+                    weight="medium"
+                    className="truncate pb-1.5 leading-tight"
+                  >
                     {user.name}
-                  </span>
-                  <span className="truncate text-xs pb-2">{user.credits}</span>
+                  </Text>
+                  <Text
+                    variant="xs" className="truncate pb-2 text-zinc-500"
+                  >
+                    {user.credits}
+                  </Text>
                   <Progress value={50} />
                 </div>
               </div>
@@ -135,7 +142,7 @@ export function NavUser({ user, logos, logo }) {
                   <div className="flex items-center justify-center rounded-xs">
                     <teamname.logo className="size-5 shrink-0 rounded-xs" />
                   </div>
-                  <span className="text-sm font-normal">{teamname.name}</span>
+                  <Text>{teamname.name}</Text>
                   <DropdownMenuShortcut className="text-xs font-normal flex gap-2">
                     <ExternalLink />⌘{index + 4}
                   </DropdownMenuShortcut>

@@ -1,6 +1,6 @@
 "use client"
 
-import { Collapsible, CollapsibleTrigger, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "..";
+import { Collapsible, CollapsibleTrigger, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, Text } from "..";
 
 export function NavMain({
   items
@@ -20,7 +20,7 @@ export function NavMain({
                 <SidebarMenuButton tooltip={item.title}>
                   <a href={item.url} className="flex items-center gap-2">
                   {item.icon && <item.icon size={16}/>}
-                  <span className="whitespace-nowrap">{item.title}</span>
+                  <Text weight="medium" className="whitespace-nowrap">{item.title}</Text>
                   </a>
                 </SidebarMenuButton>
               </CollapsibleTrigger>

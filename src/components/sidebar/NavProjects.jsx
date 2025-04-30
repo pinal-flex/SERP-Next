@@ -1,7 +1,7 @@
 "use client";
 
 import { Folder, Forward, MoreHorizontal, Trash2 } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, useSidebar } from "..";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuAction, SidebarMenuButton, SidebarMenuItem, Text, useSidebar } from "..";
 
 export function NavProjects({ projects }) {
   const { isMobile } = useSidebar();
@@ -14,15 +14,16 @@ export function NavProjects({ projects }) {
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
               <a href={item.url}>
-                <item.icon className="rounded-xs"/>
-                <span>{item.name}</span>
+                <item.icon className="rounded-xs" />
+                <Text>
+                  {item.name}
+                </Text>
               </a>
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuAction showOnHover>
                   <MoreHorizontal />
-                  <span className="sr-only">More</span>
                 </SidebarMenuAction>
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -49,8 +50,8 @@ export function NavProjects({ projects }) {
         ))}
         <SidebarMenuItem>
           <SidebarMenuButton className="text-sidebar-foreground/70">
-            <MoreHorizontal className="text-sidebar-foreground/70" />
-            <span>More</span>
+            <MoreHorizontal className="text-zinc-700" />
+            <Text>More</Text>
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>

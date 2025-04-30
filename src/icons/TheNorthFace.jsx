@@ -7,6 +7,7 @@ export function TheNorthFace({ className }) {
       height="34"
       viewBox="0 0 34 34"
       fill="none"
+      className={className}
     >
       <g clipPath="url(#clip0_12455_34669)">
         <rect

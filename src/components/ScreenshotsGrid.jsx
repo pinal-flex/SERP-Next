@@ -137,31 +137,29 @@ export function ScreenshotsGrid({
 
   return (
     <div className={className}>
-      <div className="mb-5 flex flex-row justify-between remove-scroll items-center">
-        <div>
+      <div className="mb-5 flex-wrap gap-2 flex sm:flex-nowrap justify-between remove-scroll items-center">
           {showHeading && (
             <Text type="h1" variant="2xl" weight="bold">
               Screenshots
             </Text>
           )}
-        </div>
-        <div className="flex items-center gap-0 md:gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <SearchInput />
           {showProjectFilter && (
             <Popover open={open} onOpenChange={setOpen}>
-              <PopoverTrigger asChild>
+              <PopoverTrigger asChild className="gap-0 sm:gap-2">
                 <Button
                   variant="outline"
                   role="combobox"
                   aria-expanded={open}
-                  className="w-[103px]"
+                  className="w-[90px] sm:w-[103px]"
                 >
                   {value ? (
                     frameworks.find((framework) => framework.value === value)
                       ?.label
                   ) : (
                     <>
-                      <ListFilter size={16} className="mr-1" />
+                      <ListFilter size={16}/>
                       Projects
                     </>
                   )}
@@ -237,7 +235,9 @@ export function ScreenshotsGrid({
             <CardHeader className="flex justify-between px-3 py-2">
               <div className="flex items-center gap-2">
                 <screenshot.logo className="size-8 border border-zinc-200 rounded-md" />
-                <Text>{screenshot.name}</Text>
+                <Text variant="base" weight="semibold">
+                  {screenshot.name}
+                </Text>
               </div>
               <div className="flex items-center gap-2">
                 <Checkbox size={18} className="border-zinc-200" />
@@ -257,11 +257,15 @@ export function ScreenshotsGrid({
             <CardFooter className="text-sm text-muted-foreground px-3 flex items-center justify-between py-2">
               <div className="flex truncate gap-1 items-center">
                 <Search size={16} color="#71717A" />
-                <Text>{screenshot.projectName}</Text>
+                <Text variant="xs" weight="medium" className="text-zinc-500">
+                  {screenshot.projectName}
+                </Text>
               </div>
               <div className="flex items-center gap-1">
                 <Calendar color="#71717a" size={18} />
-                <Text>{screenshot.visitDate}</Text>
+                <Text variant="xs" weight="medium" className="text-zinc-500">
+                  {screenshot.visitDate}
+                </Text>
               </div>
             </CardFooter>
           </Card>

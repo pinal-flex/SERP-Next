@@ -200,7 +200,7 @@ export default function Page() {
             className="w-full rounded-md border border-zinc-200 pt-4 pb-3 gap-4"
           >
             <CardHeader className="flex justify-between px-4">
-              <Text variant="sm" weight="medium" className="text-zinc-500">
+              <Text weight="medium" className="text-zinc-500">
                 Last Visited: {client.visitDate}
               </Text>
               <div className="flex items-center gap-2">
@@ -210,18 +210,17 @@ export default function Page() {
               </div>
             </CardHeader>
 
-            <CardContent className="px-4 flex gap-2.5 flex-wrap">
-              <div>
-                <client.logo className="size-10 rounded-md border border-zinc-200" />
-              </div>
-              <div>
+            <CardContent className="px-4 flex gap-2.5 items-start">
+              <client.logo className="size-10" />
+              <div className="flex flex-col max-w-[253px] h-[70px]">
                 <CardTitle>
                   <Text variant="lg" weight="semibold">
                     {client.name}
                   </Text>
                 </CardTitle>
                 <CardDescription>
-                  <Text variant="sm" weight="normal" className="text-zinc-500">
+                  <Text className="text-zinc-500 overflow-hidden line-clamp-2"
+                  >
                     {client.description}
                   </Text>
                 </CardDescription>
@@ -232,13 +231,15 @@ export default function Page() {
             <CardFooter className="text-sm text-muted-foreground px-4 flex items-center justify-between">
               <div className="flex truncate gap-1 items-center">
                 <FileSearch size={16} color="#717170" />
-                <Text variant="xs" weight="medium">
+                <Text variant="xs" weight="medium" className="text-zinc-500">
                   {client.keywords}
                 </Text>
               </div>
               <div className="flex items-center gap-1">
                 <TrendingUp className="text-green-600" size={16} />
-                <Text>{client.growth}</Text>
+                <Text variant="xs" weight="medium" className="text-zinc-500">
+                  {client.growth}
+                </Text>
               </div>
             </CardFooter>
           </Card>

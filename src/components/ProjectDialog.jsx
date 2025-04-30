@@ -51,7 +51,7 @@ export function ProjectDialog({
               placeholder="domain.com"
               className="placeholder:text-zinc-500"
             />
-            <Text variant="sm" weight="normal" className="text-zinc-500">
+            <Text className="text-zinc-500">
               Enter a root domain to track all subdomains{" "}
             </Text>
           </div>
@@ -93,7 +93,7 @@ export function ProjectDialog({
         </div>
         <DialogFooter className="flex items-center justify-between">
           {footerText && (
-            <Text variant="sm" weight="normal" className="text-slate-600">
+            <Text className="text-slate-600">
               {footerText}
             </Text>
           )}

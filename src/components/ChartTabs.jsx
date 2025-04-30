@@ -50,63 +50,106 @@ const chartConfig = {
 
 export function ChartTabs() {
   return (
-    <Tabs defaultValue="ranking distribution" className="gap-0">
-      <TabsList className="grid w-full grid-cols-4 p-0 rounded-none h-36">
-        <TabsTrigger
-          value="ranking distribution"
-          className="h-36 rounded-none shadow-none border-zinc-200 border-b-0 block p-6"
-        >
-          <div className="space-y-2">
-            <Text className="flex justify-between">
-              Ranking distribution
-              <TrendingUp size={16} color="#16A34A" />
-            </Text>
-            <Text className="text-left pb-6">+5.2%</Text>
-          </div>
-        </TabsTrigger>
-        <TabsTrigger
-          value="average rank"
-          className="h-36 rounded-none shadow-none border-zinc-200 border-b-0 block p-6"
-        >
-          <div className="space-y-2">
-            <Text className="flex justify-between">
-              Average rank
-              <TrendingUp size={16} color="#16A34A" />
-            </Text>
-            <Text className="text-left">+5.2%</Text>
-            <Text className="text-left">From last period</Text>
-          </div>
-        </TabsTrigger>
-        <TabsTrigger
-          value="serp features"
-          className="h-36 rounded-none shadow-none border-zinc-200 border-b-0 block p-6"
-        >
-          <div className="space-y-2">
-            <Text className="flex justify-between">
-              SERP features
-              <TrendingUp size={16} color="#16A34A" />
-            </Text>
-            <Text className="text-left">+5.2%</Text>
-            <Text className="text-left">From last period</Text>
-          </div>
-        </TabsTrigger>
-        <TabsTrigger
-          value="volatility"
-          className="h-36 rounded-none shadow-none border-zinc-200 border-b-0 block p-6"
-        >
-          <div className="space-y-2">
-            <Text className="flex justify-between">
-              Volatility
-              <TrendingUp size={16} color="#16A34A" />
-            </Text>
-            <Text className="text-left">+5.2%</Text>
-            <Text className="text-left">From last period</Text>
-          </div>
-        </TabsTrigger>
-      </TabsList>
-      <TabsContent value="ranking distribution">
-        <Card className="border-t-0 shadow-none rounded-none p-6">
-          <CardContent className="px-0">
+    <Card className="rounded-lg border shadow-none overflow-hidden p-0">
+      <Tabs defaultValue="ranking distribution" className="gap-0">
+        <TabsList className="grid w-full grid-cols-4 p-0 h-36 rounded-none">
+          <TabsTrigger
+            value="ranking distribution"
+            className="h-36 rounded-none data-[state=active]:shadow-none border-t-0 border-l-0 border-zinc-200 data-[state=active]:border-y-0 data-[state=active]:border-x-0 block p-1.5 md:p-6"
+          >
+            <div className="space-y-2">
+              <div className="flex-wrap md:flex-nowrap">
+                <Text
+                  weight="medium"
+                  className="flex justify-between text-wrap lg:text-nowrap"
+                >
+                  Ranking distribution
+                </Text>
+                <TrendingUp size={16} color="#16A34A" />
+              </div>
+              <Text variant="2xl" weight="bold" className="text-left pb-9">
+                +5.2%
+              </Text>
+            </div>
+          </TabsTrigger>
+          <TabsTrigger
+            value="average rank"
+            className="h-36 rounded-none data-[state=active]:shadow-none border-t-0 border-zinc-200 data-[state=active]:border-y-0 data-[state=active]:border-x-0 block p-1 md:p-6"
+          >
+            <div className="space-y-2">
+              <div className="flex-wrap md:flex-nowrap">
+                <Text
+                  weight="medium"
+                  className="flex justify-between text-wrap md:text-nowrap"
+                >
+                  Average rank
+                </Text>
+                <TrendingUp size={16} color="#16A34A" />
+              </div>
+              <Text variant="2xl" weight="bold" className="text-left">
+                +5.2%
+              </Text>
+              <Text
+                variant="xs"
+                className="text-left text-zinc-500 text-wrap md:text-nowrap"
+              >
+                From last period
+              </Text>
+            </div>
+          </TabsTrigger>
+          <TabsTrigger
+            value="serp features"
+            className="h-36 rounded-none data-[state=active]:shadow-none border-t-0 border-zinc-200 data-[state=active]:border-y-0 data-[state=active]:border-x-0 block p-1 md:p-6"
+          >
+            <div className="space-y-2">
+              <div className="flex-wrap md:flex-nowrap">
+                <Text
+                  weight="medium"
+                  className="flex justify-between text-wrap md:text-nowrap"
+                >
+                  SERP features
+                </Text>
+                <TrendingUp size={16} color="#ef4444" />
+              </div>
+              <Text variant="2xl" weight="bold" className="text-left">
+                +5.2%
+              </Text>
+              <Text
+                variant="xs"
+                className="text-left text-zinc-500 text-wrap md:text-nowrap"
+              >
+                From last period
+              </Text>
+            </div>
+          </TabsTrigger>
+          <TabsTrigger
+            value="volatility"
+            className="h-36 rounded-none data-[state=active]:shadow-none border-t-0 border-r-0 border-zinc-200 data-[state=active]:border-y-0 data-[state=active]:border-x-0 block p-1 md:p-6"
+          >
+            <div className="space-y-2">
+              <div className="flex-wrap md:flex-nowrap">
+                <Text
+                  weight="medium"
+                  className="flex justify-between text-wrap md:text-nowrap"
+                >
+                  Volatility
+                </Text>
+                <TrendingUp size={16} color="#16A34A" />
+              </div>
+              <Text variant="2xl" weight="bold" className="text-left">
+                +5.2%
+              </Text>
+              <Text
+                variant="xs"
+                className="text-left text-zinc-500 text-wrap md:text-nowrap"
+              >
+                From last period
+              </Text>
+            </div>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="ranking distribution">
+          <CardContent className="p-6 pt-4 pl-0 pr-4">
             <ChartContainer config={chartConfig} className="w-full h-[283px]">
               <AreaChart
                 data={chartData}
@@ -164,11 +207,9 @@ export function ChartTabs() {
               </AreaChart>
             </ChartContainer>
           </CardContent>
-        </Card>
-      </TabsContent>
-      <TabsContent value="average rank">
-        <Card className="border-t-0 shadow-none rounded-none p-6">
-          <CardContent className="px-0">
+        </TabsContent>
+        <TabsContent value="average rank">
+          <CardContent className="p-6 pt-4 pl-0 pr-4">
             <ChartContainer config={chartConfig} className="w-full h-[283px]">
               <LineChart
                 accessibilityLayer
@@ -206,11 +247,9 @@ export function ChartTabs() {
               </LineChart>
             </ChartContainer>
           </CardContent>
-        </Card>
-      </TabsContent>
-      <TabsContent value="serp features">
-        <Card className="border-t-0 shadow-none rounded-none p-6">
-          <CardContent className="px-0">
+        </TabsContent>
+        <TabsContent value="serp features">
+          <CardContent className="p-6 pt-4 pl-0 pr-4">
             <ChartContainer config={chartConfig} className="w-full h-[283px]">
               <LineChart
                 accessibilityLayer
@@ -256,11 +295,9 @@ export function ChartTabs() {
               </LineChart>
             </ChartContainer>
           </CardContent>
-        </Card>
-      </TabsContent>
-      <TabsContent value="volatility">
-        <Card className="border-t-0 shadow-none rounded-none p-6">
-          <CardContent className="px-0">
+        </TabsContent>
+        <TabsContent value="volatility">
+          <CardContent className="p-6 pt-4 pl-0 pr-4">
             <ChartContainer config={chartConfig} className="w-full h-[283px]">
               <LineChart
                 accessibilityLayer
@@ -298,8 +335,8 @@ export function ChartTabs() {
               </LineChart>
             </ChartContainer>
           </CardContent>
-        </Card>
-      </TabsContent>
-    </Tabs>
+        </TabsContent>
+      </Tabs>
+    </Card>
   );
 }

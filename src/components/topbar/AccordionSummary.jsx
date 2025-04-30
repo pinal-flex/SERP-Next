@@ -2,6 +2,7 @@ import React from "react";
 import { ExternalLink, ShieldAlert } from "lucide-react";
 import {
   Badge,
+  Button,
   Table,
   TableBody,
   TableCell,
@@ -51,12 +52,12 @@ export function AccordionSummary() {
       <div className="space-y-4">
         <h3 className="text-base font-semibold text-zinc-700">Summary</h3>
         <div className="flex flex-col gap-y-4">
-          <Text variant="sm" weight="medium">
+          <Text  weight="medium">
             Response time:{" "}
-            <span className="text-green-600 text-xs font-semibold">250ms</span>
+            <Text variant="xs" weight="semibold" className="text-green-600">250ms</Text>
           </Text>
 
-          <Text variant="sm" weight="medium">
+          <Text  weight="medium">
             HTTPS:{" "}
             <Badge variant="danger" className="border-none font-semibold">
               <ShieldAlert color="#ef4444" />
@@ -64,20 +65,20 @@ export function AccordionSummary() {
             </Badge>
           </Text>
 
-          <Text variant="sm" weight="medium">
+          <Text  weight="medium">
             Canonical:{" "}
-            <span className="text-blue-600 text-sm font-normal">
+            <Text className="text-blue-600">
               https://example.com
-            </span>
+            </Text>
           </Text>
         </div>
       </div>
 
       <div className="space-y-2">
-        <Text type="h3" variant="sm" weight="medium" className="text-zinc-950">
+        <Text type="h3"  weight="medium" className="text-zinc-950">
           Robots:
         </Text>
-        <div className="flex flex-wrap gap-2 text-xs">
+        <div className="flex flex-wrap gap-2">
           <Badge variant="danger" className="border-none">
             nofollow
           </Badge>
@@ -97,14 +98,14 @@ export function AccordionSummary() {
       </div>
 
       <div className="space-y-3">
-        <Text type="h3" variant="sm" weight="medium" className="text-zinc-950">
+        <Text type="h3" weight="medium" className="text-zinc-950">
           Hreflang:
         </Text>
         <div className="grid grid-cols-2 gap-3">
           {hreflangs.map(({ lang, url }, idx) => (
             <div
               key={idx}
-              className="rounded-lg border border-zinc-200 p-4 shadow-sm text-sm space-y-1 bg-white"
+              className="rounded-lg border border-zinc-200 p-4 shadow-sm space-y-1 bg-white"
             >
               <div className="flex items-center justify-between">
                 <Text weight="bold">{lang}</Text>
@@ -112,9 +113,9 @@ export function AccordionSummary() {
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
-              <p className="text-zinc-500 break-words whitespace-pre-line">
+              <Text className="text-zinc-500 break-words whitespace-pre-line">
                 {url}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -148,10 +149,10 @@ export function AccordionSummary() {
       </div>
 
       <div>
-        <button className="border border-zinc-200 flex gap-1.5 py-2 px-4 rounded-md text-zinc-900">
+        <Button variant="outline" className="border border-zinc-200 flex gap-1.5 py-2 px-4 rounded-md text-zinc-900">
           Open URL
           <ExternalLink className="w-4 h-4" />
-        </button>
+        </Button>
       </div>
     </div>
   );

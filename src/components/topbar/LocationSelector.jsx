@@ -9,6 +9,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
+  Text,
 } from "..";
 import { Austrelia, NewZealand, UKFlag, USFlag } from "@/icons";
 import { useState } from "react";
@@ -32,13 +33,13 @@ export function LocationSelector() {
           <CommandGroup heading="Starred">
             <CommandItem className="h-8">
               <UKFlag />
-              <span>United Kingdom</span>
+              <Text>United Kingdom</Text>
               <CommandShortcut>⌘1</CommandShortcut>
               <Star className="text-yellow-500" fill="currentColor" />
             </CommandItem>
             <CommandItem className="h-8">
               <USFlag />
-              <span>United States</span>
+              <Text>United States</Text>
               <CommandShortcut>⌘2</CommandShortcut>
               <Star className="text-yellow-500" fill="currentColor" />
             </CommandItem>
@@ -49,37 +50,37 @@ export function LocationSelector() {
           <CommandGroup heading="Suggestions">
             <CommandItem className="h-8">
               <UKFlag />
-              <span>United Kingdom</span>
+              <Text>United Kingdom</Text>
               <Star className="text-yellow-500 ml-auto" />
             </CommandItem>
 
             <CommandItem className="h-8">
               <Austrelia />
-              <span>Australia</span>
+              <Text>Australia</Text>
               <Star className="text-yellow-500 ml-auto" />
             </CommandItem>
 
             <CommandItem className="h-8">
               <NewZealand />
-              <span>New Zealand</span>
+              <Text>New Zealand</Text>
               <Star className="text-yellow-500 ml-auto" />
             </CommandItem>
 
             <CommandItem className="h-8">
               <UKFlag />
-              <span>London, UK</span>
+              <Text>London, UK</Text>
               <Star className="text-yellow-500 ml-auto" />
             </CommandItem>
 
             <CommandItem className="h-8">
               <USFlag />
-              <span>New York, USA</span>
+              <Text>New York, USA</Text>
               <Star className="text-yellow-500 ml-auto" />
             </CommandItem>
 
             <CommandItem className="h-8">
               <Austrelia />
-              <span>Sydney, Australia</span>
+              <Text>Sydney, Australia</Text>
               <Star className="text-yellow-500 ml-auto" />
             </CommandItem>
           </CommandGroup>

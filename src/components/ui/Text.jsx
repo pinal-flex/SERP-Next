@@ -13,7 +13,7 @@ export const textVariants = cva("text-zinc-900", {
       "2xl": "text-lg md:text-2xl",
       "3xl": "text-2xl sm:text-3xl",
       "4xl": "text-2xl sm:text-4xl",
-      "5xl": "",
+      "5xl": "text-5xl",
       "6xl": "text-3xl md:text-6xl",
     },
     weight: {

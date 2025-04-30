@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Send, UserPlus } from "lucide-react";
-import { Button, Collapsible, CollapsibleTrigger, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SidebarMenu, SidebarMenuButton, SidebarMenuItem, Textarea } from "..";
+import { Button, Collapsible, CollapsibleTrigger, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, Label, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SidebarMenu, SidebarMenuButton, SidebarMenuItem, Text, Textarea } from "..";
 
 export function TeamSwitcher() {
   return (
@@ -14,14 +14,15 @@ export function TeamSwitcher() {
               <DialogTrigger asChild>
                 <SidebarMenuButton
                   tooltip="Invite members"
-                  className="justify-center gap-0 bg-white"
+                  className="justify-center gap-2 bg-white"
                 >
                   <UserPlus size={16} />
-                  <span className="pl-1">
+                  <Text weight="medium" className="whitespace-nowrap">
                     Invite members
-                  </span>
+                  </Text>
                 </SidebarMenuButton>
               </DialogTrigger>
+
               <DialogContent className="sm:max-w-[425px] gap-6">
                 <DialogHeader>
                   <DialogTitle>Add members</DialogTitle>
